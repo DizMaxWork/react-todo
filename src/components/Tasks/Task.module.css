@@ -1,0 +1,10 @@
+.input__styles{
+    width: 20%;
+    padding-top: 5px;
+}
+.tasks__block{
+    display: flex;
+}
+.btn__styles{
+    width: 20%;
+}
