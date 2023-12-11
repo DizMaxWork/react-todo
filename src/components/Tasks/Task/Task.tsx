@@ -1,8 +1,9 @@
 import React from "react";
 import styles from "./Task.module.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Task({ tasks, setTasks }: any) {
+  
   return (
     <div>
       <ul className={styles.list}>

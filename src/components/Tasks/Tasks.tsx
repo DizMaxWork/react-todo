@@ -12,6 +12,12 @@ export default function Tasks() {
   useEffect(() =>{
     localStorage.setItem("tasks", JSON.stringify(tasks));
   }, [tasks])
+  useEffect(() =>{
+    const tasks = localStorage.tasks
+console.log(tasks)
+    tasks && setTasks(JSON.parse(tasks))
+  }, []) 
+
   const handlerClick = () => {
     setValue("");
     setTasks([
