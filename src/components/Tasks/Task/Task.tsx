@@ -16,7 +16,14 @@ export default function Task({ tasks, setTasks }: any) {
               <option value="В работе">В работе</option>
               <option value="Закончена">Закончена</option>
             </select>
-            <button className={styles.delete__btn} onClick={()=> setTasks(tasks.filter((x:any)=>x.id !== item.id))}>Delete!!!</button>
+            <button
+              className={styles.delete__btn}
+              onClick={() =>
+                setTasks(tasks.filter((x: any) => x.id !== item.id))
+              }
+            >
+              Delete!!!
+            </button>
             <Link
               key={item.id}
               to={`/${item.id}`}
