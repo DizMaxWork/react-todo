@@ -3,10 +3,6 @@ import styles from "./Task.module.css";
 import { Link, useNavigate } from "react-router-dom";
 
 export default function Task({ tasks, setTasks }: any) {
-  const handlerDelete = () => {
-    tasks.filter((item: any) => {});
-  };
-
   return (
     <div>
       <ul className={styles.list}>
