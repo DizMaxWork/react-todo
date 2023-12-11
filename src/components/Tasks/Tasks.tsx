@@ -5,7 +5,11 @@ import uuid from "react-uuid";
 
 export default function Tasks() {
   const [value, setValue] = useState("");
-  const [tasks, setTasks]: any = useState([]);
+  const [tasks, setTasks]: any = useState(() =>{
+    const tasks = localStorage.tasks
+    return tasks ? JSON.parse(tasks) : []
+  }); 
+
   const handlerChange = (e: any) => {
     setValue(e.target.value);
   };
@@ -17,7 +21,7 @@ export default function Tasks() {
 console.log(tasks)
     tasks && setTasks(JSON.parse(tasks))
   }, []) 
-
+  
   const handlerClick = () => {
     setValue("");
     setTasks([
