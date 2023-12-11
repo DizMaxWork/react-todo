@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Task.module.css";
 import Task from "./Task/Task";
+import uuid from "react-uuid";
 
 export default function Tasks() {
   const [value, setValue] = useState("");
@@ -15,7 +16,7 @@ export default function Tasks() {
     setValue("");
     setTasks([
       ...tasks,
-      { id: `${tasks.length + 1}`, name: value, status: "не начата" },
+      { id: uuid(), name: value, status: "не начата" },
     ]);
   };
   return (
@@ -31,7 +32,7 @@ export default function Tasks() {
           Click me!
         </button>
       </div>
-      <Task tasks={tasks} />
+      <Task tasks={tasks} setTasks={setTasks} />
     </div>
   );
 }
